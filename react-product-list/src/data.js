@@ -16,7 +16,17 @@ const cats = allCategories.reduce((acc, cat) => {
 
 const uniqueCategories = Object.keys(cats)
 
+const categoriesAndCount = allCategories.reduce((acc, cat) => {
+    if (acc[cat] === undefined) {
+        acc[cat] = 1
+    } else {
+        acc[cat] += 1
+    }
+    return acc
+}, {})
+
 export {
     allCategories,
-    uniqueCategories
+    uniqueCategories,
+    categoriesAndCount
 }
