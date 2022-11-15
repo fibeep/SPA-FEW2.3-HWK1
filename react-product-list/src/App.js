@@ -5,12 +5,23 @@ import data, {allCategories, uniqueCategories, categoriesAndCount, catsAndCounts
 // console.log(data)
 // console.log(allCategories)
 // console.log(uniqueCategories)
-console.log(catsAndCounts)
+//console.log(catsAndCounts)
 
 function App() {
   return (
     <div className="App">
-<h1>Hello World</h1>
+<h1>Productify</h1>
+<p>Products Count: {data.length}</p>
+<p>Category Count: {uniqueCategories.length}</p>
+{catsAndCounts.map(obj => {
+  return(
+    <button>{obj.name}
+    <span> {obj.count} </span>
+    </button>
+  )
+
+
+})}
     </div>
   );
 }
