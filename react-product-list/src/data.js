@@ -25,8 +25,14 @@ const categoriesAndCount = allCategories.reduce((acc, cat) => {
     return acc
 }, {})
 
+
+const catsAndCounts = uniqueCategories.map(name => {
+    return { name , count: categoriesAndCount[name]}
+})
+
 export {
     allCategories,
     uniqueCategories,
-    categoriesAndCount
+    categoriesAndCount,
+    catsAndCounts
 }
