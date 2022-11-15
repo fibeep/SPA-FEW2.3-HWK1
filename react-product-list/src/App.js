@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import data, {allCategories} from './data'
+import data, {allCategories, uniqueCategories} from './data'
 
 console.log(data)
 console.log(allCategories)
+console.log(uniqueCategories)
 
 function App() {
   return (
