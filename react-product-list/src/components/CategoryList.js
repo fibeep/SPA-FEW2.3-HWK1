@@ -1,6 +1,9 @@
 import {catsAndCounts} from '../data'
 import './CategoryList.css'
 
+
+
+
 function CategoryList(props) {
 
   const {category, onClick} = props
