@@ -1,5 +1,6 @@
 import data from '../data'
 import './ProductList.css'
+import Product from './Product'
 
 function ProductList(props){
     const {category} = props
@@ -8,15 +9,13 @@ function ProductList(props){
     return (
       <div className="ProductList">
         {data.filter((obj) => obj.category === category || category == 'All').map((obj) => {
+          
+ 
+          
           return (
-            <div>
-              <h2>{obj.name}</h2>
-              <p>{obj.description}</p>
-              <p>{obj.price}</p>
-              <small>
-                Category: {obj.category} Rating: {obj.rating}
-              </small>
-            </div>
+            <Product 
+              {...obj}
+            />
           );
         })}
       </div>

@@ -5,7 +5,7 @@ import ProductList from './components/ProductList'
 import CategoryList from './components/CategoryList'
 import Header from './components/Header'
 import {useState} from 'react'
-
+import Inventory from './components/Inventory'
 
 
 // console.log(data)
@@ -32,6 +32,8 @@ function App() {
       />
 
       <ProductList category={category} />
+
+      <Inventory />
     </div>
   );
 }
