@@ -1,0 +1,21 @@
+.CategoryList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.CategoryList > button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid;
+    border-color: black;
+    border-radius: 0.5rem;
+    background-color: grey;
+    color: #eee;
+}
+
+button.selected {
+
+    background-color: #eee;
+    color: #333;
+
+}

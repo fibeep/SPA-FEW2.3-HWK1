@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import data, {allCategories, uniqueCategories, categoriesAndCount, catsAndCounts} from './data'
+import ProductList from './components/ProductList'
+import CategoryList from './components/CategoryList'
+import Header from './components/Header'
+import {useState} from 'react'
+
+
 
 // console.log(data)
 // console.log(allCategories)
@@ -8,36 +14,24 @@ import data, {allCategories, uniqueCategories, categoriesAndCount, catsAndCounts
 //console.log(catsAndCounts)
 
 function App() {
+
+  const [category, setCategory] = useState('Tools')
+
+
   return (
     <div className="App">
-      <h1>Productify</h1>
-      <p>Products Count: {data.length}</p>
-      <p>Category Count: {uniqueCategories.length}</p>
-      <div>
-        {catsAndCounts.map((obj) => {
-          return (
-            <button>
-              {obj.name}
-              <span> {obj.count} </span>
-            </button>
-          );
-        })}
-      </div>
+      <Header
+        title="Productify"
+        productCount={data.length}
+        categoryCount={uniqueCategories.length}
+      />
 
-      <div>
-        {data.map((obj) => {
-          return(
-            <div>
-              <h2>{obj.name}</h2>
-              <p>{obj.description}</p>
-              <p>{obj.price}</p>
-              <small>Category: {obj.category} Rating: {obj.rating}</small>
-            </div>
-          )
-        })}
+      <CategoryList 
+      category={category} 
+      onClick={ (newCategory) => {setCategory(newCategory)} }
+      />
 
-
-      </div>
+      <ProductList category={category} />
     </div>
   );
 }
